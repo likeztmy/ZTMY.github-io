@@ -204,10 +204,11 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h1 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h1><p>JS的一大特点是单线程，即每一次只能执行一项任务，后面的任务只能等待前面的任务执行完毕才能继续执行。</p>
-<p>&#96;</p>
+<p>&#96;&#96;</p>
 <p>alert(‘a’)</p>
 <p>console.log(‘b’)</p>
-<p>&#96;</p>
+<p>当 alert(‘a’) 未执行完毕之前，console.log(‘b’) 便不会执行</p>
+<h1 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h1><p>由于单线程的特性，就容易出现堵塞的情况。比如说从网络获取文件，访问数据库，</p>
 
       
     </div>
