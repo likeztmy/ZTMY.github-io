@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="cropperJs1.cropperjs 是什么一款 Javascript 图像裁剪器  github文档：https:&#x2F;&#x2F;github.com&#x2F;fengyuanchen&#x2F;cropperjs&#x2F;blob&#x2F;main&#x2F;README.md 2.具体用法a.准备工作第一步，引入cropperjs包 123npm install cropperjsoryarn add cropperjs  第二步，首先我们需">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/10/02/CropperJs/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="cropperJs1.cropperjs 是什么一款 Javascript 图像裁剪器  github文档：https:&#x2F;&#x2F;github.com&#x2F;fengyuanchen&#x2F;cropperjs&#x2F;blob&#x2F;main&#x2F;README.md 2.具体用法a.准备工作第一步，引入cropperjs包 123npm install cropperjsoryarn add cropperjs  第二步，首先我们需">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-10-02T07:34:29.142Z">
+<meta property="article:modified_time" content="2022-10-02T07:23:27.618Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-CropperJs" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/10/02/CropperJs/" class="article-date">
+  <time class="dt-published" datetime="2022-10-02T07:34:29.142Z" itemprop="datePublished">2022-10-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="cropperJs"><a href="#cropperJs" class="headerlink" title="cropperJs"></a>cropperJs</h1><h3 id="1-cropperjs-是什么"><a href="#1-cropperjs-是什么" class="headerlink" title="1.cropperjs 是什么"></a>1.cropperjs 是什么</h3><p>一款 Javascript 图像裁剪器 </p>
+<p>github文档：<a target="_blank" rel="noopener" href="https://github.com/fengyuanchen/cropperjs/blob/main/README.md">https://github.com/fengyuanchen/cropperjs/blob/main/README.md</a></p>
+<h3 id="2-具体用法"><a href="#2-具体用法" class="headerlink" title="2.具体用法"></a>2.具体用法</h3><h5 id="a-准备工作"><a href="#a-准备工作" class="headerlink" title="a.准备工作"></a>a.准备工作</h5><p>第一步，引入cropperjs包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install cropperjs</span><br><span class="line">or</span><br><span class="line">yarn add cropperjs</span><br></pre></td></tr></table></figure>
+
+<p>第二步，首先我们需要有一个container容器来保存一个 img 或 canvas， 此处我们以img为例。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div className=&#x27;container&#x27;&gt;</span><br><span class="line">     &lt;img id=&#x27;image&#x27; ref=&#123;imgref&#125; src=&#123;imgURL&#125;/&gt;	</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>第三步，我们要设置img的样式，这很重要！</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#image &#123;</span><br><span class="line">    display: block;</span><br><span class="line">    max-width: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第四步，我们要引入 cropper.css这个文件，如果不引入这个文件，就无法达到裁剪器的效果。该css文件在node-modules&#x2F;cropperjs&#x2F;dist目录下。</p>
+<h5 id="b-开始使用"><a href="#b-开始使用" class="headerlink" title="b.开始使用"></a>b.开始使用</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">export default function Crop () &#123;</span><br><span class="line">    const [imgURL,setimgURL] = useState(pic)</span><br><span class="line">    const imgref = useRef()</span><br><span class="line">    useEffect(()=&gt;&#123;</span><br><span class="line">        // 创建一个Cropper实例</span><br><span class="line">        // 第一个参数，html元素，img或canvas</span><br><span class="line">        // 第二个参数，一个对象，在该对象内可以自定义裁剪组件属性的值，详情见文档</span><br><span class="line">       	// 这里列出常用到的属性</span><br><span class="line">        const cropper = new Cropper(imgref.current,&#123;</span><br><span class="line">             aspectRatio:1/1, // 指裁剪框的横纵比</span><br><span class="line">             viewMode:1, // 主要用于设置裁剪框的作用区域</span><br><span class="line">             dragMode:2, // 裁剪框拖动模式</span><br><span class="line">             cropBoxMovable:true, // 裁剪框能否移动</span><br><span class="line">             cropBoxResizable:false, // 裁剪框能否重新调整大小</span><br><span class="line">             zoomOnWheel:true, // 能否通过鼠标滚轮来缩放图片大小</span><br><span class="line">             zoomOnTouch:true, // 能否通过触摸来缩放图片大小</span><br><span class="line">             preview:document.querySelectorAll(&#x27;#preview&#x27;), //用于预览将要裁剪的图片</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;,[])</span><br><span class="line">    return (</span><br><span class="line">        &lt;div className=&#x27;box&#x27;&gt;</span><br><span class="line">            &lt;div className=&#x27;container&#x27;&gt;</span><br><span class="line">                &lt;img id=&#x27;image&#x27; ref=&#123;imgref&#125; src=&#123;imgURL&#125;/&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div id=&#x27;preview&#x27;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>当cropper对象生成时，裁剪器就会被渲染出来了，以上Crop便是一个裁剪组件</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/10/02/CropperJs/" data-id="cl8r18q1x0000noupdbx2e7bo" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/05/26/%E5%90%8C%E6%AD%A5%20%E5%BC%82%E6%AD%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">同步与异步</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/10/02/CropperJs/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/26/%E5%90%8C%E6%AD%A5%20%E5%BC%82%E6%AD%A5/">同步与异步</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/26/This/">this</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/26/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

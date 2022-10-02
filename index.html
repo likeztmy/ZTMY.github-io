@@ -71,6 +71,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CropperJs" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/10/02/CropperJs/" class="article-date">
+  <time class="dt-published" datetime="2022-10-02T07:34:29.142Z" itemprop="datePublished">2022-10-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="cropperJs"><a href="#cropperJs" class="headerlink" title="cropperJs"></a>cropperJs</h1><h3 id="1-cropperjs-是什么"><a href="#1-cropperjs-是什么" class="headerlink" title="1.cropperjs 是什么"></a>1.cropperjs 是什么</h3><p>一款 Javascript 图像裁剪器 </p>
+<p>github文档：<a target="_blank" rel="noopener" href="https://github.com/fengyuanchen/cropperjs/blob/main/README.md">https://github.com/fengyuanchen/cropperjs/blob/main/README.md</a></p>
+<h3 id="2-具体用法"><a href="#2-具体用法" class="headerlink" title="2.具体用法"></a>2.具体用法</h3><h5 id="a-准备工作"><a href="#a-准备工作" class="headerlink" title="a.准备工作"></a>a.准备工作</h5><p>第一步，引入cropperjs包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install cropperjs</span><br><span class="line">or</span><br><span class="line">yarn add cropperjs</span><br></pre></td></tr></table></figure>
+
+<p>第二步，首先我们需要有一个container容器来保存一个 img 或 canvas， 此处我们以img为例。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div className=&#x27;container&#x27;&gt;</span><br><span class="line">     &lt;img id=&#x27;image&#x27; ref=&#123;imgref&#125; src=&#123;imgURL&#125;/&gt;	</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>第三步，我们要设置img的样式，这很重要！</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#image &#123;</span><br><span class="line">    display: block;</span><br><span class="line">    max-width: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第四步，我们要引入 cropper.css这个文件，如果不引入这个文件，就无法达到裁剪器的效果。该css文件在node-modules&#x2F;cropperjs&#x2F;dist目录下。</p>
+<h5 id="b-开始使用"><a href="#b-开始使用" class="headerlink" title="b.开始使用"></a>b.开始使用</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">export default function Crop () &#123;</span><br><span class="line">    const [imgURL,setimgURL] = useState(pic)</span><br><span class="line">    const imgref = useRef()</span><br><span class="line">    useEffect(()=&gt;&#123;</span><br><span class="line">        // 创建一个Cropper实例</span><br><span class="line">        // 第一个参数，html元素，img或canvas</span><br><span class="line">        // 第二个参数，一个对象，在该对象内可以自定义裁剪组件属性的值，详情见文档</span><br><span class="line">       	// 这里列出常用到的属性</span><br><span class="line">        const cropper = new Cropper(imgref.current,&#123;</span><br><span class="line">             aspectRatio:1/1, // 指裁剪框的横纵比</span><br><span class="line">             viewMode:1, // 主要用于设置裁剪框的作用区域</span><br><span class="line">             dragMode:2, // 裁剪框拖动模式</span><br><span class="line">             cropBoxMovable:true, // 裁剪框能否移动</span><br><span class="line">             cropBoxResizable:false, // 裁剪框能否重新调整大小</span><br><span class="line">             zoomOnWheel:true, // 能否通过鼠标滚轮来缩放图片大小</span><br><span class="line">             zoomOnTouch:true, // 能否通过触摸来缩放图片大小</span><br><span class="line">             preview:document.querySelectorAll(&#x27;#preview&#x27;), //用于预览将要裁剪的图片</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;,[])</span><br><span class="line">    return (</span><br><span class="line">        &lt;div className=&#x27;box&#x27;&gt;</span><br><span class="line">            &lt;div className=&#x27;container&#x27;&gt;</span><br><span class="line">                &lt;img id=&#x27;image&#x27; ref=&#123;imgref&#125; src=&#123;imgURL&#125;/&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div id=&#x27;preview&#x27;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>当cropper对象生成时，裁剪器就会被渲染出来了，以上Crop便是一个裁剪组件</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/10/02/CropperJs/" data-id="cl8r18q1x0000noupdbx2e7bo" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-同步 异步" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/05/26/%E5%90%8C%E6%AD%A5%20%E5%BC%82%E6%AD%A5/" class="article-date">
@@ -267,7 +310,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li></ul>
     </div>
   </div>
 
@@ -278,6 +321,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/10/02/CropperJs/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2022/05/26/%E5%90%8C%E6%AD%A5%20%E5%BC%82%E6%AD%A5/">同步与异步</a>
