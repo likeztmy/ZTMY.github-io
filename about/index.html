@@ -11,7 +11,7 @@
   
   <title>
     
-      同步与异步 
+      About 
       
       
       |
@@ -151,93 +151,36 @@
   <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
   <div class="container post-details" id="post-details">
     <div class="post-content">
-      <div class="post-title">同步与异步</div>
+      <div class="post-title">about</div>
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-          2022-05-28 21:53:33
+          2023-05-06 17:28:08
         </span>
         
       </div>
       <div class="markdown-body">
-        <h1 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h1><p>JS的一大特点是单线程，即每一次只能执行一项任务，后面的任务只能等待前面的任务执行完毕才能继续执行。</p>
-<p>同步编程，即是一种典型的请求-响应模型，当请求调用一个函数或方法后，需等待其响应返回，然后执行后续代码。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alert(&#x27;a&#x27;)</span><br><span class="line"></span><br><span class="line">console.log(&#x27;b&#x27;)</span><br></pre></td></tr></table></figure>
-
-<p>当 alert(‘a’) 未执行完毕之前，console.log(‘b’) 便不会执行</p>
-<h1 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h1><p>由于单线程的特性，就容易出现阻塞的情况。比如说从网络获取文件，访问数据库等等。可以通过异步编程来解决这个问题。</p>
-<p>异步编程：请求调用函数或方法后，无需立即等待响应，可以继续执行后面的任务，等到这些响应返回后，可以通过状态，回调函数来通知调用者</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">console.log(1)</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(2)</span><br><span class="line">&#125;, 1000);</span><br><span class="line"></span><br><span class="line">console.log(3)</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>JS执行环境中存在两个结构：执行栈和任务队列</p>
-<p>执行栈：由执行上下文组成，当函数调用时，创建一个执行上下文，通常称为执行栈帧，并插入执行栈，存储着函数参数和局部变量，当函数执行完毕时，弹出该执行栈帧</p>
-<p>任务队列：异步任务的响应返回时，其回调函数将会放到消息队列中</p>
-<p>等执行栈内的同步任务执行完毕时，主线程会从任务队列中取出回调函数并插入执行栈中，然后执行回调函数，执行完后退栈。</p>
-<h1 id="异步操作-setTimeout"><a href="#异步操作-setTimeout" class="headerlink" title="异步操作 setTimeout"></a>异步操作 setTimeout</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">console.log(1);</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(2);</span><br><span class="line">&#125;, 2000);</span><br><span class="line"></span><br><span class="line">console.log(3);</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(4)</span><br><span class="line">&#125;, 1000);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">console.time(&#x27;a&#x27;)</span><br><span class="line"></span><br><span class="line">// for循环是一个同步任务，会被放进执行栈内执行</span><br><span class="line">for(var i=0;i&lt;999999;i++)&#123;          </span><br><span class="line">	setTimeout(() =&gt; &#123;   //内部的setTimeout则是一个异步操作</span><br><span class="line">		console.log(i)   </span><br><span class="line">	&#125;, 0);   // 哪怕时间设置为0 也不会立即执行，需等到同步任务执行完毕后才执行</span><br><span class="line">&#125;           </span><br><span class="line">	</span><br><span class="line">console.timeEnd(&#x27;a&#x27;)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">console.log(1);</span><br><span class="line"></span><br><span class="line">console.log(2);</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(3);</span><br><span class="line">&#125;, 2000);</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(10);</span><br><span class="line">&#125;, 1000);</span><br><span class="line"></span><br><span class="line">alert(&quot;stop&quot;); // 当alert尚未结束时，代码便不会继续读取下去，验证了JS单线程的特点</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(4);</span><br><span class="line">&#125;,5000);</span><br><span class="line"></span><br><span class="line">console.log(1111);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">console.time(&#x27;b&#x27;);</span><br><span class="line"></span><br><span class="line">console.log(1);</span><br><span class="line"></span><br><span class="line">console.log(2);</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(4);         </span><br><span class="line">&#125;, 2000);          // 两秒后返回响应，将回调函数放到任务队列</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(3);</span><br><span class="line">&#125;, 1000);         // 一秒后返回响应，将回调函数放到任务队列</span><br><span class="line"></span><br><span class="line">console.time(&#x27;a&#x27;);</span><br><span class="line">for(var i=0;i&lt;1666666666;i++);   // 当for循环结束时，才会继续读取下面的代码</span><br><span class="line">console.timeEnd(&#x27;a&#x27;);   // for循环花了大概7秒，当下面的1111输出后,执行栈清空</span><br><span class="line">						//立即将任务队列的3、4输出</span><br><span class="line">									</span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(5);</span><br><span class="line">    console.timeEnd(&#x27;b&#x27;);</span><br><span class="line">&#125;,5000);               //5秒之后才会输出5</span><br><span class="line"></span><br><span class="line">console.log(1111);</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
+        
       </div>
       
         <div class="prev-or-next">
           <div class="post-foot-next">
             
-              <a href="/2022/05/26/This/" target="_self">
-                <i class="iconfont icon-chevronleft"></i>
-                <span>Prev</span>
-              </a>
-            
           </div>
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-              2022-05-28 21:53:33
+              2023-05-06 17:28:08
             </span>
             
           </div>
           <div class="post-foot-prev">
-            
-              <a href="/2022/10/02/CropperJs/" target="_self">
-                <span>Next</span>
-                <i class="iconfont icon-chevronright"></i>
-              </a>
             
           </div>
         </div>
       
     </div>
     
-  <div id="btn-catalog" class="btn-catalog">
-    <i class="iconfont icon-catalog"></i>
-  </div>
-  <div class="post-catalog hidden" id="catalog">
-    <div class="title">Contents</div>
-    <div class="catalog-content">
-      
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5"><span class="toc-text">同步</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5"><span class="toc-text">异步</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-text">原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C-setTimeout"><span class="toc-text">异步操作 setTimeout</span></a></li></ol>
-      
-    </div>
-  </div>
-
-  
-<script src="/js/catalog.js"></script>
-
-
-
 
     
       <div class="comments-container">
@@ -514,12 +457,12 @@
       </a>
       <div class="share-content hidden">
         
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E5%90%8C%E6%AD%A5%E4%B8%8E%E5%BC%82%E6%AD%A5 + '&url=' + http%3A%2F%2Fexample.com%2F2022%2F05%2F26%2F%25E5%2590%258C%25E6%25AD%25A5%2520%25E5%25BC%2582%25E6%25AD%25A5%2F + '" target="_blank" title="Twitter">
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + about + '&url=' + http%3A%2F%2Fexample.com%2Fabout%2Findex.html + '" target="_blank" title="Twitter">
             <i class="iconfont icon-twitter"></i>
           </a>
         
         
-          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2022/05/26/%E5%90%8C%E6%AD%A5%20%E5%BC%82%E6%AD%A5/" target="_blank" title="Facebook">
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/about/index.html" target="_blank" title="Facebook">
             <i class="iconfont icon-facebooksquare"></i>
           </a>
         

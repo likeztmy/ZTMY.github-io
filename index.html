@@ -1,389 +1,428 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="en" color-mode="light">
+
+  <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <meta name="author" content="John Doe" />
+  <meta name="description" content="" />
   
   
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+  <title>
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+     Hexo
+  </title>
 
   
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.png">
   
-<link rel="stylesheet" href="/css/style.css">
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
 
   
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
   
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
 <meta name="generator" content="Hexo 6.2.0"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
       
+        <img src="/images/avatar.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">Oranges</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">Friends</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <div class="container index">
+  <div class="post-list">
+    <!-- 遍历渲染文章 -->
+    
+      <div class="post-item" title="">
+        <div class="time-m-d">2022-10-02</div>
+        <div class="title">
+          <a href="/2022/10/02/CropperJs/">
+            
+              <span>untitled</span>
+            
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="同步与异步">
+        <div class="time-m-d">2022-05-26</div>
+        <div class="title">
+          <a href="/2022/05/26/%E5%90%8C%E6%AD%A5%20%E5%BC%82%E6%AD%A5/">
+            
+              
+                <span>同步与异步</span>
+              
+            
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="this">
+        <div class="time-m-d">2022-05-26</div>
+        <div class="title">
+          <a href="/2022/05/26/This/">
+            
+              
+                <span>this</span>
+              
+            
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="Hello World">
+        <div class="time-m-d">2022-05-26</div>
+        <div class="title">
+          <a href="/2022/05/26/hello-world/">
+            
+              
+                <span>Hello World</span>
+              
+            
+          </a>
+        </div>
+      </div>
+    
+  </div>
+  <nav class="post-navigation">
+    
+    <span class="page-num">1 / 1</span>
+    
+  </nav>
+</div>
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2023 Oranges</a>
+        
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
         
-          <a class="main-nav-link" href="/">Home</a>
+    </div>
+  
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
         
-      </nav>
-      <nav id="sub-nav">
+          <input type="text" class="search-input" id="search-input" placeholder="Search...">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
       </div>
     </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-CropperJs" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/10/02/CropperJs/" class="article-date">
-  <time class="dt-published" datetime="2022-10-02T07:34:29.142Z" itemprop="datePublished">2022-10-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="cropperJs"><a href="#cropperJs" class="headerlink" title="cropperJs"></a>cropperJs</h1><h3 id="1-cropperjs-是什么"><a href="#1-cropperjs-是什么" class="headerlink" title="1.cropperjs 是什么"></a>1.cropperjs 是什么</h3><p>一款 Javascript 图像裁剪器 </p>
-<p>github文档：<a target="_blank" rel="noopener" href="https://github.com/fengyuanchen/cropperjs/blob/main/README.md">https://github.com/fengyuanchen/cropperjs/blob/main/README.md</a></p>
-<h3 id="2-具体用法"><a href="#2-具体用法" class="headerlink" title="2.具体用法"></a>2.具体用法</h3><h5 id="a-准备工作"><a href="#a-准备工作" class="headerlink" title="a.准备工作"></a>a.准备工作</h5><p>第一步，引入cropperjs包</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install cropperjs</span><br><span class="line">or</span><br><span class="line">yarn add cropperjs</span><br></pre></td></tr></table></figure>
-
-<p>第二步，首先我们需要有一个container容器来保存一个 img 或 canvas， 此处我们以img为例。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div className=&#x27;container&#x27;&gt;</span><br><span class="line">     &lt;img id=&#x27;image&#x27; ref=&#123;imgref&#125; src=&#123;imgURL&#125;/&gt;	</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-<p>第三步，我们要设置img的样式，这很重要！</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#image &#123;</span><br><span class="line">    display: block;</span><br><span class="line">    max-width: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>第四步，我们要引入 cropper.css这个文件，如果不引入这个文件，就无法达到裁剪器的效果。该css文件在node-modules&#x2F;cropperjs&#x2F;dist目录下。</p>
-<h5 id="b-开始使用"><a href="#b-开始使用" class="headerlink" title="b.开始使用"></a>b.开始使用</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">export default function Crop () &#123;</span><br><span class="line">    const [imgURL,setimgURL] = useState(pic)</span><br><span class="line">    const imgref = useRef()</span><br><span class="line">    useEffect(()=&gt;&#123;</span><br><span class="line">        // 创建一个Cropper实例</span><br><span class="line">        // 第一个参数，html元素，img或canvas</span><br><span class="line">        // 第二个参数，一个对象，在该对象内可以自定义裁剪组件属性的值，详情见文档</span><br><span class="line">       	// 这里列出常用到的属性</span><br><span class="line">        const cropper = new Cropper(imgref.current,&#123;</span><br><span class="line">             aspectRatio:1/1, // 指裁剪框的横纵比</span><br><span class="line">             viewMode:1, // 主要用于设置裁剪框的作用区域</span><br><span class="line">             dragMode:2, // 裁剪框拖动模式</span><br><span class="line">             cropBoxMovable:true, // 裁剪框能否移动</span><br><span class="line">             cropBoxResizable:false, // 裁剪框能否重新调整大小</span><br><span class="line">             zoomOnWheel:true, // 能否通过鼠标滚轮来缩放图片大小</span><br><span class="line">             zoomOnTouch:true, // 能否通过触摸来缩放图片大小</span><br><span class="line">             preview:document.querySelectorAll(&#x27;#preview&#x27;), //用于预览将要裁剪的图片</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;,[])</span><br><span class="line">    return (</span><br><span class="line">        &lt;div className=&#x27;box&#x27;&gt;</span><br><span class="line">            &lt;div className=&#x27;container&#x27;&gt;</span><br><span class="line">                &lt;img id=&#x27;image&#x27; ref=&#123;imgref&#125; src=&#123;imgURL&#125;/&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div id=&#x27;preview&#x27;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>当cropper对象生成时，裁剪器就会被渲染出来了，以上Crop便是一个裁剪组件</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/10/02/CropperJs/" data-id="cl8r18q1x0000noupdbx2e7bo" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-同步 异步" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/26/%E5%90%8C%E6%AD%A5%20%E5%BC%82%E6%AD%A5/" class="article-date">
-  <time class="dt-published" datetime="2022-05-26T14:19:38.224Z" itemprop="datePublished">2022-05-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/26/%E5%90%8C%E6%AD%A5%20%E5%BC%82%E6%AD%A5/">同步与异步</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h1><p>JS的一大特点是单线程，即每一次只能执行一项任务，后面的任务只能等待前面的任务执行完毕才能继续执行。</p>
-<p>同步编程，即是一种典型的请求-响应模型，当请求调用一个函数或方法后，需等待其响应返回，然后执行后续代码。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alert(&#x27;a&#x27;)</span><br><span class="line"></span><br><span class="line">console.log(&#x27;b&#x27;)</span><br></pre></td></tr></table></figure>
-
-<p>当 alert(‘a’) 未执行完毕之前，console.log(‘b’) 便不会执行</p>
-<h1 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h1><p>由于单线程的特性，就容易出现阻塞的情况。比如说从网络获取文件，访问数据库等等。可以通过异步编程来解决这个问题。</p>
-<p>异步编程：请求调用函数或方法后，无需立即等待响应，可以继续执行后面的任务，等到这些响应返回后，可以通过状态，回调函数来通知调用者</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">console.log(1)</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(2)</span><br><span class="line">&#125;, 1000);</span><br><span class="line"></span><br><span class="line">console.log(3)</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>JS执行环境中存在两个结构：执行栈和任务队列</p>
-<p>执行栈：由执行上下文组成，当函数调用时，创建一个执行上下文，通常称为执行栈帧，并插入执行栈，存储着函数参数和局部变量，当函数执行完毕时，弹出该执行栈帧</p>
-<p>任务队列：异步任务的响应返回时，其回调函数将会放到消息队列中</p>
-<p>等执行栈内的同步任务执行完毕时，主线程会从任务队列中取出回调函数并插入执行栈中，然后执行回调函数，执行完后退栈。</p>
-<h1 id="异步操作-setTimeout"><a href="#异步操作-setTimeout" class="headerlink" title="异步操作 setTimeout"></a>异步操作 setTimeout</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">console.log(1);</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(2);</span><br><span class="line">&#125;, 2000);</span><br><span class="line"></span><br><span class="line">console.log(3);</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(4)</span><br><span class="line">&#125;, 1000);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">console.time(&#x27;a&#x27;)</span><br><span class="line"></span><br><span class="line">// for循环是一个同步任务，会被放进执行栈内执行</span><br><span class="line">for(var i=0;i&lt;999999;i++)&#123;          </span><br><span class="line">	setTimeout(() =&gt; &#123;   //内部的setTimeout则是一个异步操作</span><br><span class="line">		console.log(i)   </span><br><span class="line">	&#125;, 0);   // 哪怕时间设置为0 也不会立即执行，需等到同步任务执行完毕后才执行</span><br><span class="line">&#125;           </span><br><span class="line">	</span><br><span class="line">console.timeEnd(&#x27;a&#x27;)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">console.log(1);</span><br><span class="line"></span><br><span class="line">console.log(2);</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(3);</span><br><span class="line">&#125;, 2000);</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(10);</span><br><span class="line">&#125;, 1000);</span><br><span class="line"></span><br><span class="line">alert(&quot;stop&quot;); // 当alert尚未结束时，代码便不会继续读取下去，验证了JS单线程的特点</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(4);</span><br><span class="line">&#125;,5000);</span><br><span class="line"></span><br><span class="line">console.log(1111);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">console.time(&#x27;b&#x27;);</span><br><span class="line"></span><br><span class="line">console.log(1);</span><br><span class="line"></span><br><span class="line">console.log(2);</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(4);         </span><br><span class="line">&#125;, 2000);          // 两秒后返回响应，将回调函数放到任务队列</span><br><span class="line"></span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(3);</span><br><span class="line">&#125;, 1000);         // 一秒后返回响应，将回调函数放到任务队列</span><br><span class="line"></span><br><span class="line">console.time(&#x27;a&#x27;);</span><br><span class="line">for(var i=0;i&lt;1666666666;i++);   // 当for循环结束时，才会继续读取下面的代码</span><br><span class="line">console.timeEnd(&#x27;a&#x27;);   // for循环花了大概7秒，当下面的1111输出后,执行栈清空</span><br><span class="line">						//立即将任务队列的3、4输出</span><br><span class="line">									</span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(5);</span><br><span class="line">    console.timeEnd(&#x27;b&#x27;);</span><br><span class="line">&#125;,5000);               //5秒之后才会输出5</span><br><span class="line"></span><br><span class="line">console.log(1111);</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/26/%E5%90%8C%E6%AD%A5%20%E5%BC%82%E6%AD%A5/" data-id="cl3ppxysu0002esup8mym9eja" data-title="同步与异步" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-This" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/26/This/" class="article-date">
-  <time class="dt-published" datetime="2022-05-26T14:19:36.039Z" itemprop="datePublished">2022-05-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/26/This/">this</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="this-在面向对象语言中，this用于指向当前对象，其类型为object，其值为当前对象"><a href="#this-在面向对象语言中，this用于指向当前对象，其类型为object，其值为当前对象" class="headerlink" title="this: 在面向对象语言中，this用于指向当前对象，其类型为object，其值为当前对象"></a>this: 在面向对象语言中，this用于指向当前对象，其类型为object，其值为当前对象</h2><h2 id="this在方法中的使用"><a href="#this在方法中的使用" class="headerlink" title="this在方法中的使用"></a>this在方法中的使用</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var person = &#123;</span><br><span class="line">  name : &#x27;张三&#x27;，</span><br><span class="line">  fullName : function() &#123;</span><br><span class="line">    return this.name;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;; </span><br><span class="line">person.fullName(); //张三</span><br></pre></td></tr></table></figure>
-
-<h2 id="this在函数中的使用"><a href="#this在函数中的使用" class="headerlink" title="this在函数中的使用"></a>this在函数中的使用</h2><h3 id="1-在标准函数中的使用"><a href="#1-在标准函数中的使用" class="headerlink" title="1.在标准函数中的使用"></a>1.在标准函数中的使用</h3><p>this 指向的是把函数当成方法调用的上下文对象</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var color= &#x27;red&#x27;;</span><br><span class="line">var o = &#123;</span><br><span class="line">    color: &#x27;blue&#x27;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function sayColor() &#123;</span><br><span class="line">    console.log(this.color)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">sayColor(); //red</span><br><span class="line"></span><br><span class="line">o.fn = saycolor;</span><br><span class="line">o.fn(); //blue</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-在箭头函数中的使用"><a href="#2-在箭头函数中的使用" class="headerlink" title="2.在箭头函数中的使用"></a>2.在箭头函数中的使用</h3><p>this 指向的是定义箭头函数的上下文</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var color = &#x27;red&#x27;;</span><br><span class="line">var o = &#123;</span><br><span class="line">    color : &#x27;blue&#x27;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var sayColor = () =&gt; console.log(this.color);</span><br><span class="line"></span><br><span class="line">sayColor(); //red</span><br><span class="line"></span><br><span class="line">o.fn = sayColor;</span><br><span class="line">o.fn(); //red</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-闭包"><a href="#3-闭包" class="headerlink" title="3.闭包"></a>3.闭包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">obj = &#123;</span><br><span class="line">    fn: function () &#123;</span><br><span class="line">            return function () &#123;</span><br><span class="line">                console.log(this);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.fn()();</span><br></pre></td></tr></table></figure>
-
-<h2 id="this在事件中使用"><a href="#this在事件中使用" class="headerlink" title="this在事件中使用"></a>this在事件中使用</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;button&quot; value=&quot;按钮&quot; onclick=&quot;console.log(this)&quot;&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="this单独使用"><a href="#this单独使用" class="headerlink" title="this单独使用"></a>this单独使用</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var x = this;</span><br><span class="line">console.log(x); // window</span><br></pre></td></tr></table></figure>
-
-<h2 id="call-和-apply"><a href="#call-和-apply" class="headerlink" title="call() 和 apply()"></a>call() 和 apply()</h2><h3 id="1-call-方法"><a href="#1-call-方法" class="headerlink" title="1. call()方法"></a>1. call()方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//语法规则：</span><br><span class="line">//函数名称.call(obj,arg1,arg2,arg3....);</span><br><span class="line">//obj：函数内this要指向的对象</span><br><span class="line">//arg1,arg2,arg3...:要传递的参数</span><br><span class="line"></span><br><span class="line">var obj = &#123;name: &#x27;张三&#x27;&#125;；</span><br><span class="line"></span><br><span class="line">function fn(age) &#123;</span><br><span class="line">    console.log(this.name);</span><br><span class="line">    console.log(age);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn.call(obj,18); //张三 18</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-apply-方法"><a href="#2-apply-方法" class="headerlink" title="2. apply()方法"></a>2. apply()方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//语法规则：</span><br><span class="line">//函数名称.apply(obj,[arg1,arg2,arg3...])</span><br><span class="line">//obj: 函数内this要指向的对象</span><br><span class="line">//[agr1,arg2,arg3...]:要传递的参数，要求格式为数组</span><br><span class="line"></span><br><span class="line">var obj = &#123;name: &#x27;张三&#x27;&#125;；</span><br><span class="line"></span><br><span class="line">function fn(age,sex) &#123;</span><br><span class="line">    console.log(this.name);</span><br><span class="line">    console.log(age);</span><br><span class="line">	console.log(sex);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn.apply(obj,[18,&#x27;man&#x27;]); //张三 18 man</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-bind-方法"><a href="#3-bind-方法" class="headerlink" title="3. bind()方法"></a>3. bind()方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// 跟 apply()方法，call()方法 有所区别</span><br><span class="line">// bind()方法会创建一个新的函数实列</span><br><span class="line">// 语法规则：</span><br><span class="line">// 函数名称.bind(obj,arg1,arg2,arg3)</span><br><span class="line">// obj: 新的函数中this要绑定的对象</span><br><span class="line">// arg1,arg2,arg3...:要传递的参数</span><br><span class="line"></span><br><span class="line">var color = &#x27;red&#x27;;</span><br><span class="line">var o = &#123;</span><br><span class="line">    color = &#x27;blue&#x27;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function sayColor() &#123;</span><br><span class="line">    console.log(this.color);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let fn = sayColor.bind(o);</span><br><span class="line">fn(); //blue</span><br></pre></td></tr></table></figure>
-
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var o = &#123;</span><br><span class="line">    f1: function f1()&#123;</span><br><span class="line">            function f2()&#123;</span><br><span class="line">                console.log(this);</span><br><span class="line">            &#125;</span><br><span class="line">            f2();</span><br><span class="line">    &#125;,</span><br><span class="line">    f3: function f3() &#123;</span><br><span class="line">            let f4 = () =&gt; &#123;</span><br><span class="line">                console.log(this);</span><br><span class="line">            &#125;</span><br><span class="line">            f4();</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.f1();</span><br><span class="line">obj.f3();</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/26/This/" data-id="cl3ppxysr0001esup4xokag6h" data-title="this" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/26/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2022-05-26T14:09:25.525Z" itemprop="datePublished">2022-05-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/26/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/26/hello-world/" data-id="cl3ppxysj0000esupf15l1wea" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/10/02/CropperJs/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/26/%E5%90%8C%E6%AD%A5%20%E5%BC%82%E6%AD%A5/">同步与异步</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/26/This/">this</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/26/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
+  </body>
 </html>
