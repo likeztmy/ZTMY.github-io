@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="cn" color-mode="light">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <meta name="author" content="likeztmy" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+     贝尔先生的小屋
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
+  <!-- 代码块风格 -->
+  
+
+  <!-- jquery3.3.1 -->
+  
+    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+  
+
+  <!-- fancybox -->
+  
+    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+  
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+
+  
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  <script>
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      document.documentElement.setAttribute('color-mode', colorMode)
+    }
+  </script>
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/images/avatar.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">likeztmy</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">主页</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">归档</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">标签</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">友链</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">关于</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title"></div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2023-05-06 22:34:37
+        </span>
+        
+      </div>
+      <div class="markdown-body">
+        <h1 id="Docker-Nginx-部署前端项目"><a href="#Docker-Nginx-部署前端项目" class="headerlink" title="Docker + Nginx 部署前端项目"></a>Docker + Nginx 部署前端项目</h1><hr>
+<h3 id="1-在服务器上安装docker"><a href="#1-在服务器上安装docker" class="headerlink" title="1.在服务器上安装docker"></a>1.在服务器上安装docker</h3><p>采取傻瓜式方法，在购买腾讯云服务器时，设置服务器配置为centos操作系统，选择安装docker就行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 确认docker是否安装及其版本</span><br><span class="line">docker -v </span><br></pre></td></tr></table></figure>
+
+<img src='http://ru8pmalva.bkt.clouddn.com/561.png' alt=''>
+
+<h3 id="2-安装并配置Nginx"><a href="#2-安装并配置Nginx" class="headerlink" title="2.安装并配置Nginx"></a>2.安装并配置Nginx</h3><h5 id="1-拉取nginx镜像"><a href="#1-拉取nginx镜像" class="headerlink" title="1.拉取nginx镜像"></a>1.拉取nginx镜像</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 查询nginx镜像</span><br><span class="line">docker search nginx </span><br><span class="line"># 拉取nginx镜像到服务器上</span><br><span class="line">docker pull nginx </span><br><span class="line"># 查看docker内的镜像，确定nginx是否安装成功</span><br><span class="line">docker images</span><br></pre></td></tr></table></figure>
+
+<img src = 'http://ru8pmalva.bkt.clouddn.com/562.png' alt = ''>
+
+<img src='http://ru8pmalva.bkt.clouddn.com/563.png' alt=''>
+
+
+
+<h5 id="2-启动nginx镜像"><a href="#2-启动nginx镜像" class="headerlink" title="2.  启动nginx镜像"></a>2.  启动nginx镜像</h5><p>在成功拉取nginx镜像之后，可以开启一个容器来运行nginx镜像</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># docker run --name 容器名字 -p 主机端口:容器端口 -d 镜像</span><br><span class="line"># 开启一个名为nginx的容器，其运行镜像为nginx</span><br><span class="line">docker run --name nginx -p 80:80 -d nginx </span><br><span class="line"></span><br><span class="line"># 查看当前正在运行的容器</span><br><span class="line">docker ps</span><br><span class="line"># 查看当前所有容器</span><br><span class="line">docker ps -a</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<img src = 'http://ru8pmalva.bkt.clouddn.com/564.png' alt = ''>
+
+
+
+
+
+<p>此时可以访问我们的公网ip，如果出现如下页面，则nginx启动成功</p>
+<img src = 'http://ru8pmalva.bkt.clouddn.com/565.png' alt = ''>
+
+<h5 id="3-修改nginx配置文件"><a href="#3-修改nginx配置文件" class="headerlink" title="3. 修改nginx配置文件"></a>3. 修改nginx配置文件</h5><p>我们可以将一些nginx里的文件放到服务器上来，以方便文件的操作编辑及部署。如果要这样做的话，需要先将nginx里的相关文件拷贝出来，放到服务器上。具体操作如下：</p>
+<p>(1)先在服务器上创建好要放置相关文件的文件夹</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 用于存放nginx相关文件</span><br><span class="line">mkdir -p /root/nginx  </span><br><span class="line">mkdir -p /root/nginx/conf</span><br><span class="line">mkdir -p /root/nginx/los</span><br><span class="line">mkdir -p /root/nginx/html</span><br><span class="line"># 用于存放要部署的前端项目dist文件</span><br><span class="line">mkdir -p /root/app</span><br><span class="line">mkdir -p /root/app/demo</span><br></pre></td></tr></table></figure>
+
+<p>(2)进入容器内部</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># docker exec -it 容器名称 bash</span><br><span class="line">docker exec -it nginx bash</span><br></pre></td></tr></table></figure>
+
+<img src='http://ru8pmalva.bkt.clouddn.com/566.png' alt= ''>
+
+<p>(3) 查看容器内的文件</p>
+<p>nginx的默认配置信息通常在 &#x2F;etc&#x2F;nginx&#x2F;nginx.conf 文件里，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 查看/etc/nginx目录下的文件，主要存放一些配置文件</span><br><span class="line">ls /etc/nginx   </span><br><span class="line"></span><br><span class="line"># 查看nginx.conf文件，其通常为nginx的默认配置文件</span><br><span class="line">cd /etc.nginx </span><br><span class="line">cat nginx.conf</span><br><span class="line"></span><br><span class="line"># 返回根目录，再查看nginx启动成功时的index.html文件</span><br><span class="line">cd../../</span><br><span class="line">cd /usr/share/nginx/html</span><br><span class="line">cat index.html</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">//index.html内容如下</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;Welcome to nginx!&lt;/title&gt;</span><br><span class="line">        &lt;style&gt;</span><br><span class="line">            html &#123;</span><br><span class="line">                color-scheme: light dark;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            body &#123;</span><br><span class="line">                width: 35em;</span><br><span class="line">                margin: 0 auto;</span><br><span class="line">                font-family: Tahoma, Verdana, Arial, sans-serif;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line"></span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;h1&gt;Welcome to nginx!&lt;/h1&gt;</span><br><span class="line">        &lt;p&gt;If you see this page, the nginx web server is successfully installed and</span><br><span class="line">            working. Further configuration is required.&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">        &lt;p&gt;For online documentation and support please refer to</span><br><span class="line">            &lt;a href=&quot;http://nginx.org/&quot;&gt;nginx.org&lt;/a&gt;.&lt;br /&gt;</span><br><span class="line">            Commercial support is available at</span><br><span class="line">            &lt;a href=&quot;http://nginx.com/&quot;&gt;nginx.com&lt;/a&gt;.</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line"></span><br><span class="line">        &lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>（4）拷贝相关文件到服务器上</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 首先退出容器</span><br><span class="line">exit</span><br><span class="line"># 开始拷贝</span><br><span class="line">docker cp nginx:/etc/nginx/nginx.conf /root/nginx/conf/nginx.conf</span><br><span class="line">docker cp nginx:/ect/nginx/nginx/conf.d /root/nginx/conf</span><br><span class="line">docker cp nginx:/usr/share/nginx/html /root/app/demo</span><br></pre></td></tr></table></figure>
+
+
+
+<p>(5) 暂停并删除原来的nginx容器，并开启新的nginx容器，并将其配置文件及网站站点文件挂载在服务器上。挂载在服务器上是为了方便编辑操作及管理。而为什么要重新启动一个新的容器，则是因为我们第一次启动nginx容器时，服务器上并没有文件可以让nginx容器链接挂载，如果这个时候建立挂载，则nginx上的配置文件会被空文件覆盖，致使启动失败。所以具体操作如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 暂停并删除容器</span><br><span class="line"># docker stop 容器名称</span><br><span class="line">docker stop nginx</span><br><span class="line"># docker rm 容器名称</span><br><span class="line">docker rm nginx</span><br><span class="line"></span><br><span class="line"># 查看所有容器</span><br><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 重启一个挂载服务器上文件目录的容器 下面的-v是指绑定一个卷，即文件目录</span><br><span class="line">docker run -p 80:80 -name nginx \</span><br><span class="line">-v /root/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \</span><br><span class="line">-v /root/nginx/conf/conf.d:/ect/nginx/conf.d \</span><br><span class="line">-v /root/nginx/logs:/var/log/nginx \</span><br><span class="line">-v /root/app/demo:/usr/share/nginx/html \</span><br><span class="line">-d nginx</span><br><span class="line"></span><br><span class="line"># 查看运行中的容器</span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line"># 访问公网IP地址，若出现nginx页面则启动成功</span><br></pre></td></tr></table></figure>
+
+<p>（6）进行nginx配置编辑</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 打开配置文件</span><br><span class="line">cd /root/nginx/conf</span><br><span class="line">vi nginx.conf</span><br><span class="line"># 按i进入编辑模式</span><br><span class="line"># 按ESC退回至命令模式</span><br><span class="line"># 在命令模式下执行 :wq 保存并退出</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">user  root; # 这里需要改成root</span><br><span class="line">worker_processes  auto;</span><br><span class="line"></span><br><span class="line"># error_log 输出目录</span><br><span class="line">error_log  /var/log/nginx/error.log notice;</span><br><span class="line">pid        /var/run/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    include       /etc/nginx/mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    log_format  main    &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span><br><span class="line">                        &#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span><br><span class="line">                        &#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;;</span><br><span class="line"></span><br><span class="line">    access_log  /var/log/nginx/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">    	# 这里是表示监听的端口</span><br><span class="line">        listen 80;</span><br><span class="line">        listen [::]:80;</span><br><span class="line">        # 这里表示服务器地址 写域名或IP</span><br><span class="line">        server_name localhost;</span><br><span class="line">        # 这里表示网站index.html的存放目录</span><br><span class="line">        root /usr/share/nginx/html;</span><br><span class="line">		# 用include的方式引入配置文件</span><br><span class="line">        include /etc/nginx/default.d/*.conf;</span><br><span class="line">		</span><br><span class="line">		# 以下这两段location配置一定要写</span><br><span class="line">		# 这是因为我们的前端是单页面应用，这也是为什么打包之后只有一个index.html</span><br><span class="line">		# 相关的路由匹配已经交由前端处理，我们只需配置重定向到index.html</span><br><span class="line">		# 如果不做重定向配置，则形如http://localhost/xxx/xxx的链接访问会出现nginx404的页面</span><br><span class="line">        location / &#123;</span><br><span class="line">            try_files $uri $uri/ @router;</span><br><span class="line">            index index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        location @router &#123;</span><br><span class="line">            rewrite ^.*$ /index.html last;</span><br><span class="line">        &#125;</span><br><span class="line">		# 错误页面转发</span><br><span class="line">        error_page 404 /404.html;</span><br><span class="line">        location = /40x.html &#123;</span><br><span class="line">        &#125;</span><br><span class="line">		# 错误页面转发</span><br><span class="line">        error_page 500 502 503 504 /50x.html;</span><br><span class="line">        location = /50x.html &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    #gzip  on;</span><br><span class="line"></span><br><span class="line">    include /etc/nginx/conf.d/*.conf;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"># 编辑站点index.html 验证是否生效</span><br><span class="line">cd /root/app/demo</span><br><span class="line">vi index.html</span><br><span class="line"></span><br><span class="line">#可随意修改内容 例如增加一个大标题h1：修改成功！</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;Welcome to nginx!&lt;/title&gt;</span><br><span class="line">        &lt;style&gt;</span><br><span class="line">            html &#123;</span><br><span class="line">                color-scheme: light dark;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            body &#123;</span><br><span class="line">                width: 35em;</span><br><span class="line">                margin: 0 auto;</span><br><span class="line">                font-family: Tahoma, Verdana, Arial, sans-serif;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line"></span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;h1&gt;Welcome to nginx!&lt;/h1&gt;</span><br><span class="line">        &lt;h1&gt;修改成功！&lt;/h1&gt;</span><br><span class="line">        &lt;p&gt;If you see this page, the nginx web server is successfully installed and</span><br><span class="line">            working. Further configuration is required.&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">        &lt;p&gt;For online documentation and support please refer to</span><br><span class="line">            &lt;a href=&quot;http://nginx.org/&quot;&gt;nginx.org&lt;/a&gt;.&lt;br /&gt;</span><br><span class="line">            Commercial support is available at</span><br><span class="line">            &lt;a href=&quot;http://nginx.com/&quot;&gt;nginx.com&lt;/a&gt;.</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line"></span><br><span class="line">        &lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-部署前端项目"><a href="#3-部署前端项目" class="headerlink" title="3.部署前端项目"></a>3.部署前端项目</h3><p>这里我们可以将任意一个前端项目build打包，然后将其dist文件上传到服务器上我们创建好的应用目录下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 上传dist到服务器目录下</span><br><span class="line"># 在需要部署项目的根目录下输入如下命令</span><br><span class="line">scp -r ./dist root@服务器IP:/root/app/demo</span><br><span class="line"></span><br><span class="line"># 虽然在服务器上验证是否上传成功</span><br><span class="line"># 如有dist文件则上传成功</span><br><span class="line">ls /root/app/demo</span><br><span class="line"></span><br><span class="line"># 进入容器内查看验证</span><br><span class="line">docker exec -it nginx bash</span><br><span class="line">ls /usr/share/nginx/html</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这时，我们要展示的页面文件index.html在dist目录下</p>
+<p>所以需要修改nginx.conf里的配置信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">cd /root/nginx/conf</span><br><span class="line">vi nginx.conf</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">user  root; # 这里需要改成root</span><br><span class="line">worker_processes  auto;</span><br><span class="line"></span><br><span class="line"># error_log 输出目录</span><br><span class="line">error_log  /var/log/nginx/error.log notice;</span><br><span class="line">pid        /var/run/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    include       /etc/nginx/mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    log_format  main    &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span><br><span class="line">                        &#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span><br><span class="line">                        &#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;;</span><br><span class="line"></span><br><span class="line">    access_log  /var/log/nginx/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">    	# 这里是表示监听的端口</span><br><span class="line">        listen 80;</span><br><span class="line">        listen [::]:80;</span><br><span class="line">        # 这里表示服务器地址 写域名或IP</span><br><span class="line">        server_name localhost;</span><br><span class="line">        # 这里表示网站index.html的存放目录</span><br><span class="line">        root /usr/share/nginx/html/dist;        # 这里需要修改成/usr/share/nginx/html/dist</span><br><span class="line">		# 用include的方式引入配置文件</span><br><span class="line">        include /etc/nginx/default.d/*.conf;</span><br><span class="line">		</span><br><span class="line">		# 以下这两段location配置一定要写</span><br><span class="line">		# 这是因为我们的前端是单页面应用，这也是为什么打包之后只有一个index.html</span><br><span class="line">		# 相关的路由匹配已经交由前端处理，我们只需配置重定向到index.html</span><br><span class="line">		# 如果不做重定向配置，则形如http://localhost/xxx/xxx的链接访问会出现nginx404的页面</span><br><span class="line">        location / &#123;</span><br><span class="line">            try_files $uri $uri/ @router;</span><br><span class="line">            index index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        location @router &#123;</span><br><span class="line">            rewrite ^.*$ /index.html last;</span><br><span class="line">        &#125;</span><br><span class="line">		# 错误页面转发</span><br><span class="line">        error_page 404 /404.html;</span><br><span class="line">        location = /40x.html &#123;</span><br><span class="line">        &#125;</span><br><span class="line">		# 错误页面转发</span><br><span class="line">        error_page 500 502 503 504 /50x.html;</span><br><span class="line">        location = /50x.html &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    #gzip  on;</span><br><span class="line"></span><br><span class="line">    include /etc/nginx/conf.d/*.conf;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 不出意外的话 应该就部署成功了</span><br></pre></td></tr></table></figure>
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2022/10/02/CropperJs/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2023-05-06 22:34:37
+            </span>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker-Nginx-%E9%83%A8%E7%BD%B2%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE"><span class="toc-text">Docker + Nginx 部署前端项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85docker"><span class="toc-text">1.在服务器上安装docker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85%E5%B9%B6%E9%85%8D%E7%BD%AENginx"><span class="toc-text">2.安装并配置Nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E6%8B%89%E5%8F%96nginx%E9%95%9C%E5%83%8F"><span class="toc-text">1.拉取nginx镜像</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E5%90%AF%E5%8A%A8nginx%E9%95%9C%E5%83%8F"><span class="toc-text">2.  启动nginx镜像</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E4%BF%AE%E6%94%B9nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">3. 修改nginx配置文件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%83%A8%E7%BD%B2%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE"><span class="toc-text">3.部署前端项目</span></a></li></ol></li></ol></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        
+<div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2023 Oranges</a>
+        
+    </div>
+  
+    
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+  
+    <div class="footer-views">
+      
+          本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        
+      
+          本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        
+      
+          本站访客数<span id="busuanzi_value_site_uv"></span>人
+        
+      
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="tools-bar">
+        <div class="back-to-top tools-bar-item hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+        
+  <div class="search-icon tools-bar-item" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="Search...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+        
+  <div class="tools-bar-item theme-icon" id="switch-color-scheme">
+    <a href="javascript: void(0)">
+      <i id="theme-icon" class="iconfont icon-moon"></i>
+    </a>
+  </div>
+
+  
+<script src="/js/colorscheme.js"></script>
+
+
+
+
+
+        
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' +  + '&url=' + http%3A%2F%2Fexample.com%2F2023%2F05%2F06%2FDocker%2520%2B%2520Nginx%2520%25E9%2583%25A8%25E7%25BD%25B2%25E5%2589%258D%25E7%25AB%25AF%25E9%25A1%25B9%25E7%259B%25AE%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2023/05/06/Docker%20+%20Nginx%20%E9%83%A8%E7%BD%B2%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
+  
+  
+<script src="/js/shares.js"></script>
+
+
+
+      </div>
+    </div>
+  </body>
+</html>
